@@ -19,9 +19,7 @@ exit();
     <h1>Assignment 1</h1>
 
     <p>Welcome, <?=$_SESSION['username'] ?></p>
-    <p>Welcome, <?= htmlspecialchars($_SESSION['username']) ?>!</p>
     <p>Today's date is: <?= date("l, F j, Y") ?></p>
-    
   
   </body>
 
