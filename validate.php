@@ -11,14 +11,18 @@
     $password = $_REQUEST['password'];  
 
     if ($valid_username == $username && $valid_password == $password) {
-        header('Location:/') ;     
+        $_SESSION['authenticated'] = 1;
+        header('Location:/index.php') ; 
+        exit();
     } else {
         if (!isset($_SESSION['failed_attempts'])){ 
    $_SESSION['failed_attempts'] = 1;
    } else {
      $_SESSION['failed_attempts']=$_SESSION['failed_attempts'] + 1;     
-   }   
-      echo "This is unsuccessful login attempt number: ".$_SESSION['failed_attempts'];
+   } 
+      //header('Location:/login.php');
+      echo "This is unsuccessful login attempt number:  ".$_SESSION['failed_attempts']."<br>";      
+      echo "<a href='/login.php'>Try Again</a>";
       
  }
    

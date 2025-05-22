@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+// If already logged in, redirect to index
+if (isset($_SESSION['authenticated']) && $_SESSION['authenticated'] === 1) {
+    header("Location: /index.php");
+    exit();
+}
+?>
+  
 <!DOCTYPE html>
 <html>
   <head>
